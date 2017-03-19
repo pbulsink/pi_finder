@@ -20,15 +20,17 @@ shinyUI(fluidPage(
     sidebarPanel(
        sliderInput("points",
                    "Number of points to use in estimation:",
-                   min = 100,
+                   min = 500,
                    max = 500000,
-                   value = 5000)
+                   value = 5000,
+                   step = 500)
     ),
 
 
     # Show a plot of the generated distribution
     mainPanel(
        h1("Estimate of Pi"),
+       p("This estimates pi using Monte Carlo simulation. More information is available in the manual."),
        plotOutput("piPlot")
     )
   )

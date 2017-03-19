@@ -23,7 +23,7 @@ shinyServer(function(input, output) {
     pidf<-data.frame(x, y, isPi)
     piVal<- 4*sum(isPi)/input$points
 
-    ggplot(pidf, aes(x=x, y=y)) + geom_point(aes(colour=factor(isPi))) + annotate('text', label=paste0("pi estimate = ", round(piVal, 6)), x=0.3, y=0.3, size = 8)
+    ggplot(pidf, aes(x=x, y=y)) + geom_point(aes(colour=factor(isPi))) + ggtitle(paste0("pi estimate = ", round(piVal, 6))) + theme_bw() + guides(colour = guide_legend(title = "In the Circle"))
   })
 
 })
